@@ -45,7 +45,7 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;paddi
 .lang button[aria-pressed="true"]{background:var(--on-green);color:var(--green)}
 .lang a{color:var(--on-green-muted);font:600 12px/1 var(--body);letter-spacing:.08em;padding:8px 11px;text-decoration:none}
 .lang a[aria-current="true"]{background:var(--on-green);color:var(--green)}
-@media (max-width:900px){.links a{display:none}}
+@media (max-width:900px){.links > a{display:none}}
 
 .hero{padding-block:64px 84px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end}
 .hero h1{font-size:clamp(40px,6vw,72px);letter-spacing:-.01em;margin-top:18px}
