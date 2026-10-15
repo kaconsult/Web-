@@ -63,7 +63,7 @@
 <div class="wrap">
 <div class="head">
 <div><p class="eyebrow" data-i="c_eyebrow">Enquiry form</p><h2 data-i="c_h2">Eight questions about your trade</h2></div>
-<p data-i="c_p">Every enquiry is treated as confidential. The registration number is optional; it helps us identify the company before the first call.</p>
+<p data-i="c_p">Every enquiry is treated as confidential. The registration number lets us identify the company before the first call.</p>
 </div>
 <div class="cwrap">
 <div class="cdet">
@@ -77,7 +77,7 @@
 <p hidden=""><label>Leave this empty <input name="bot-field"/></label></p>
 <div class="f"><label for="f-company">1. Company legal name</label><input autocomplete="organization" id="f-company" name="company" required=""/></div>
 <div class="f"><label for="f-country">Country of registration</label><input autocomplete="country-name" id="f-country" name="country" required=""/></div>
-<div class="f"><label for="f-reg">Registration number (optional)</label><input id="f-reg" name="registration_number"/></div>
+<div class="f"><label for="f-reg">Registration number</label><input id="f-reg" name="registration_number" required=""/></div>
 <div class="f"><label for="f-web">Website</label><input autocomplete="url" id="f-web" name="website" type="url"/></div>
 <div class="f full"><label for="f-trade">2. What you trade: commodities and the countries you buy from and sell to</label><textarea id="f-trade" name="trade" required=""></textarea></div>
 <div class="f"><label for="f-years">3. Years in trading</label>
@@ -158,7 +158,7 @@
 <script>
 (function(){
   var MSG={
-    en:{need:"Please fill in the company name, what you trade, your name and email, and tick the consent box.",sent:"Thank you. We have received your enquiry and will reply within two business days.",mail:"Your email app should open with the message ready to send. If it doesn't, write to at@kaconsulting.ge.",err:"The enquiry could not be sent. Please write to at@kaconsulting.ge."},
+    en:{need:"Please fill in the company name and registration number, what you trade, your name and email, and tick the consent box.",sent:"Thank you. We have received your enquiry and will reply within two business days.",mail:"Your email app should open with the message ready to send. If it doesn't, write to at@kaconsulting.ge.",err:"The enquiry could not be sent. Please write to at@kaconsulting.ge."},
     ka:{need:"გთხოვთ, შეავსოთ კომპანიის დასახელება, რით ვაჭრობთ, თქვენი სახელი და ელ-ფოსტა და მონიშნოთ თანხმობის ველი.",sent:"გმადლობთ. თქვენი მოთხოვნა მიღებულია, გიპასუხებთ 2 სამუშაო დღეში.",mail:"უნდა გაიხსნას თქვენი ელ-ფოსტის აპლიკაცია მზა წერილით. თუ არ გაიხსნა, მოგვწერეთ: at@kaconsulting.ge",err:"მოთხოვნა ვერ გაიგზავნა. გთხოვთ, მოგვწეროთ: at@kaconsulting.ge"}
   };
   var hl=document.documentElement.lang;var lang=(hl==="ka")?"ka":"en";
@@ -176,8 +176,8 @@
     e.preventDefault();
     var m=MSG[lang];
     function v(id){return document.getElementById(id).value.trim();}
-    var company=v("f-company"),trade=v("f-trade"),name=v("f-name"),email=v("f-email");
-    if(!company||!trade||!name||!email||email.indexOf("@")<1||!document.getElementById("f-consent").checked){status.textContent=m.need;return;}
+    var company=v("f-company"),reg=v("f-reg"),trade=v("f-trade"),name=v("f-name"),email=v("f-email");
+    if(!company||!reg||!trade||!name||!email||email.indexOf("@")<1||!document.getElementById("f-consent").checked){status.textContent=m.need;return;}
     var fd=new FormData(form);
     function mailto(){
       var body="Company: "+company+"\nCountry: "+v("f-country")+"\nRegistration number: "+v("f-reg")+"\nWebsite: "+v("f-web")+"\n\nTrade: "+trade+"\nYears in trading: "+v("f-years")+"\nAnnual turnover (USD): "+v("f-turnover")+"\nFinancing per deal (USD): "+v("f-amount")+"\nUse of funds: "+v("f-use")+"\nDeal cycle (days): "+v("f-cycle")+"\n\nName: "+name+"\nRole: "+v("f-role")+"\nEmail: "+email+"\nPhone: "+v("f-phone");
