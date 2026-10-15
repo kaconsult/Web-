@@ -56,7 +56,7 @@
 <nav aria-label="Breadcrumb" class="crumbs"><a href="/ka/">მთავარი</a><span>/</span><a href="/ka/#services">მომსახურება</a><span>/</span><a href="/ka/services/trade-finance/">სასაქონლო ვაჭრობის დაფინანსება</a><span>/</span><span>მოთხოვნა</span></nav>
 <p class="eyebrow kicker">სასაქონლო ვაჭრობის დაფინანსება · მოთხოვნა</p>
 <h1>წინასაექსპორტო დაფინანსების მოთხოვნა</h1>
-<p class="dek">უპასუხეთ რვა კითხვას თქვენი სავაჭრო საქმიანობის შესახებ და 2 სამუშაო დღეში გეტყვით, შეგვიძლია თუ არა დაგეხმაროთ და როგორ. გამოცდილი სასაქონლო ტრეიდერებისთვის ვაწყობთ 4 მლნ აშშ დოლარამდე განახლებად წინასაექსპორტო საკრედიტო ხაზებს; ბანკი გადაწყვეტილებას სრული პაკეტის მიღებიდან 5 სამუშაო დღეში იღებს.</p>
+<p class="dek">უპასუხეთ რვა კითხვას თქვენი სავაჭრო საქმიანობის შესახებ და 2 სამუშაო დღეში გეტყვით, შეგვიძლია თუ არა დაგეხმაროთ და როგორ. ლიკვიდური საბირჟო საქონლით მოვაჭრე გამოცდილი კომპანიებისთვის ვაწყობთ 4 მლნ აშშ დოლარამდე განახლებად წინასაექსპორტო საკრედიტო ხაზებს; ბანკი გადაწყვეტილებას სრული პაკეტის მიღებიდან 5 სამუშაო დღეში იღებს.</p>
 </div></article>
 
 <section class="contact" id="contact">
@@ -80,6 +80,12 @@
 <div class="f"><label for="f-reg">სარეგისტრაციო ნომერი</label><input id="f-reg" name="registration_number" required=""/></div>
 <div class="f"><label for="f-web">ვებგვერდი</label><input autocomplete="url" id="f-web" name="website" type="url"/></div>
 <div class="f full"><label for="f-trade">2. რით ვაჭრობთ: საქონელი, შესყიდვისა და გაყიდვის ქვეყნები</label><textarea id="f-trade" name="trade" required=""></textarea></div>
+<div class="f full"><label for="f-listed">არის თუ არა საქონელი საბირჟო, საჯარო საბაზრო ფასით?</label>
+<select id="f-listed" name="exchange_traded">
+<option value="Yes - exchange-traded commodity (grain, oilseeds, metals, oil products)" selected="">დიახ — საბირჟო საქონელია (მარცვლეული, ზეთოვანი კულტურები, ლითონები, ნავთობპროდუქტები)</option>
+<option value="Partly - some products have a market price">ნაწილობრივ — ზოგიერთ პროდუქტს აქვს საბაზრო ფასი</option>
+<option value="No - niche goods without a market price">არა — ნიშური საქონელია, საბაზრო ფასის გარეშე</option>
+</select></div>
 <div class="f"><label for="f-years">3. რამდენი წელია ვაჭრობთ</label>
 <select id="f-years" name="years">
 <option value="Under 2">2 წელზე ნაკლები</option>
@@ -181,7 +187,7 @@
     if(!company||!reg||!trade||!name||!email||email.indexOf("@")<1||!document.getElementById("f-consent").checked){status.textContent=m.need;return;}
     var fd=new FormData(form);
     function mailto(){
-      var body="Company: "+company+"\nCountry: "+v("f-country")+"\nRegistration number: "+v("f-reg")+"\nWebsite: "+v("f-web")+"\n\nTrade: "+trade+"\nYears in trading: "+v("f-years")+"\nAnnual turnover (USD): "+v("f-turnover")+"\nFinancing per deal (USD): "+v("f-amount")+"\nUse of funds: "+v("f-use")+"\nDeal cycle (days): "+v("f-cycle")+"\n\nName: "+name+"\nRole: "+v("f-role")+"\nEmail: "+email+"\nPhone: "+v("f-phone");
+      var body="Company: "+company+"\nCountry: "+v("f-country")+"\nRegistration number: "+v("f-reg")+"\nWebsite: "+v("f-web")+"\n\nTrade: "+trade+"\nExchange-traded: "+v("f-listed")+"\nYears in trading: "+v("f-years")+"\nAnnual turnover (USD): "+v("f-turnover")+"\nFinancing per deal (USD): "+v("f-amount")+"\nUse of funds: "+v("f-use")+"\nDeal cycle (days): "+v("f-cycle")+"\n\nName: "+name+"\nRole: "+v("f-role")+"\nEmail: "+email+"\nPhone: "+v("f-phone");
       status.textContent=m.mail;
       location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent("Pre-export financing enquiry: "+company)+"&body="+encodeURIComponent(body);
     }

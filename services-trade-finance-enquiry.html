@@ -56,7 +56,7 @@
 <nav aria-label="Breadcrumb" class="crumbs"><a href="/">Home</a><span>/</span><a href="/#services">Services</a><span>/</span><a href="/services/trade-finance/">Commodity trade finance</a><span>/</span><span>Enquiry</span></nav>
 <p class="eyebrow kicker">Commodity trade finance · Enquiry</p>
 <h1>Pre-export financing enquiry</h1>
-<p class="dek">Tell us about your trade in eight questions and we will come back within two business days with whether and how we can help. We arrange revolving pre-export lines of up to USD 4m for established commodity traders, with a credit decision within five business days of a complete package.</p>
+<p class="dek">Tell us about your trade in eight questions and we will come back within two business days with whether and how we can help. We arrange revolving pre-export lines of up to USD 4m for established traders in liquid, exchange-traded commodities, with a credit decision within five business days of a complete package.</p>
 </div></article>
 
 <section class="contact" id="contact">
@@ -80,6 +80,12 @@
 <div class="f"><label for="f-reg">Registration number</label><input id="f-reg" name="registration_number" required=""/></div>
 <div class="f"><label for="f-web">Website</label><input autocomplete="url" id="f-web" name="website" type="url"/></div>
 <div class="f full"><label for="f-trade">2. What you trade: commodities and the countries you buy from and sell to</label><textarea id="f-trade" name="trade" required=""></textarea></div>
+<div class="f full"><label for="f-listed">Is the commodity exchange-traded with a published market price?</label>
+<select id="f-listed" name="exchange_traded">
+<option value="Yes - exchange-traded commodity (grain, oilseeds, metals, oil products)" selected="">Yes — exchange-traded commodity (grain, oilseeds, metals, oil products)</option>
+<option value="Partly - some products have a market price">Partly — some products have a market price</option>
+<option value="No - niche goods without a market price">No — niche goods without a market price</option>
+</select></div>
 <div class="f"><label for="f-years">3. Years in trading</label>
 <select id="f-years" name="years">
 <option value="Under 2">Under 2</option>
@@ -180,7 +186,7 @@
     if(!company||!reg||!trade||!name||!email||email.indexOf("@")<1||!document.getElementById("f-consent").checked){status.textContent=m.need;return;}
     var fd=new FormData(form);
     function mailto(){
-      var body="Company: "+company+"\nCountry: "+v("f-country")+"\nRegistration number: "+v("f-reg")+"\nWebsite: "+v("f-web")+"\n\nTrade: "+trade+"\nYears in trading: "+v("f-years")+"\nAnnual turnover (USD): "+v("f-turnover")+"\nFinancing per deal (USD): "+v("f-amount")+"\nUse of funds: "+v("f-use")+"\nDeal cycle (days): "+v("f-cycle")+"\n\nName: "+name+"\nRole: "+v("f-role")+"\nEmail: "+email+"\nPhone: "+v("f-phone");
+      var body="Company: "+company+"\nCountry: "+v("f-country")+"\nRegistration number: "+v("f-reg")+"\nWebsite: "+v("f-web")+"\n\nTrade: "+trade+"\nExchange-traded: "+v("f-listed")+"\nYears in trading: "+v("f-years")+"\nAnnual turnover (USD): "+v("f-turnover")+"\nFinancing per deal (USD): "+v("f-amount")+"\nUse of funds: "+v("f-use")+"\nDeal cycle (days): "+v("f-cycle")+"\n\nName: "+name+"\nRole: "+v("f-role")+"\nEmail: "+email+"\nPhone: "+v("f-phone");
       status.textContent=m.mail;
       location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent("Pre-export financing enquiry: "+company)+"&body="+encodeURIComponent(body);
     }
