@@ -119,53 +119,54 @@
 <section class="contact" id="contact">
 <div class="wrap">
 <div class="head">
-<div><p class="eyebrow" data-i="c_eyebrow">Contact</p><h2 data-i="c_h2">Start with a conversation</h2></div>
-<p data-i="c_p">Tell us what you are planning and where. Every enquiry is treated as confidential.</p>
+<div><p class="eyebrow">Project questionnaire</p><h2>Ten questions about your project</h2></div>
+<p>Fields marked * are required.</p>
 </div>
-<div class="cwrap">
-<div class="cdet">
-<div><div class="k" data-i="c_email">Email</div><div class="v"><a href="mailto:at@kaconsulting.ge">at@kaconsulting.ge</a></div></div>
-<div><div class="k" data-i="c_phone">Phone, WhatsApp, Telegram</div><div class="v"><a href="tel:+995598896040">+995 598 896 040</a></div>
-<div class="msg"><a href="https://wa.me/995598896040" rel="noopener" target="_blank">WhatsApp</a><a href="https://t.me/+995598896040" rel="noopener" target="_blank">Telegram</a><a href="https://www.linkedin.com/company/kaconsulting" rel="noopener" target="_blank">LinkedIn</a></div></div>
-<div><div class="k" data-i="c_office">Office</div><div class="v" data-i="c_city">Tbilisi, Georgia</div></div>
-</div>
-<form data-netlify="true" id="enquiry" method="POST" name="enquiry" netlify-honeypot="bot-field" novalidate="">
-<input name="form-name" type="hidden" value="enquiry"/>
+<form data-netlify="true" id="questionnaire" method="POST" name="questionnaire" netlify-honeypot="bot-field" novalidate="">
+<input name="form-name" type="hidden" value="questionnaire"/>
+<input name="language" type="hidden" value="en"/>
 <p hidden=""><label>Leave this empty <input name="bot-field"/></label></p>
-<div class="f"><label data-i="f_name" for="f-name">Name</label><input autocomplete="name" id="f-name" name="name" required=""/></div>
-<div class="f"><label data-i="f_email" for="f-email">Email</label><input autocomplete="email" id="f-email" name="email" required="" type="email"/></div>
-<div class="f"><label data-i="f_phone" for="f-phone">Phone or WhatsApp (optional)</label><input autocomplete="tel" id="f-phone" name="phone" type="tel"/></div>
-<div class="f"><label data-i="f_role" for="f-role">I am</label>
-<select id="f-role" name="role">
-<option data-i="o_inv" value="Investor">An investor</option>
-<option data-i="o_co" value="Company">A company</option>
-<option data-i="o_pc" value="Private client">A private client or family</option>
-<option data-i="o_ot" value="Other">Other</option>
-</select></div>
-<div class="f"><label data-i="f_market" for="f-market">Market</label>
-<select id="f-market" name="market">
-<option data-i="m_ge" value="Georgia">Georgia</option>
-<option data-i="m_am" value="Armenia">Armenia</option>
-<option data-i="m_az" value="Azerbaijan">Azerbaijan</option>
-<option data-i="m_kz" value="Kazakhstan">Kazakhstan</option>
-<option data-i="o_sev" value="Several">Several</option>
-</select></div>
-<div class="f"><label data-i="f_size" for="f-size">Approximate size (USD)</label>
-<select id="f-size" name="size">
-<option data-i="z1" value="Under 1m">Under 1m</option>
-<option data-i="z2" value="1-5m">1–5m</option>
-<option data-i="z3" value="5-20m">5–20m</option>
-<option data-i="z4" value="Over 20m">Over 20m</option>
-<option data-i="z5" value="n/a">Not applicable</option>
-</select></div>
-<div class="f full"><label data-i="f_msg" for="f-msg">What are you planning?</label><textarea id="f-msg" name="message" required=""></textarea></div>
-<label class="consent"><input id="f-consent" required="" type="checkbox"/><span><span data-i="f_consent">I agree that K+A Consulting may use these details to reply to my enquiry, as described in the</span> <a class="privacy-open" data-i="f_pp" href="#privacy">privacy policy</a>.</span></label>
-<div><button class="btn primary" data-i="f_submit" type="submit">Send enquiry</button></div>
-<p aria-live="polite" class="fstatus" id="f-status" role="status"></p>
+<h3 class="qsec">1. About you</h3>
+<div class="f"><label for="q-name">Your name *</label><input id="q-name" name="name" type="text" autocomplete="name" required=""/></div>
+<div class="f"><label for="q-email">Email *</label><input id="q-email" name="email" type="email" autocomplete="email" required=""/></div>
+<div class="f"><label for="q-phone">Phone, WhatsApp or Telegram</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"/></div>
+<div class="f"><label for="q-company">Company and website</label><input id="q-company" name="company" type="text"/></div>
+<div class="f"><label for="q-country">Country of registration</label><input id="q-country" name="country" type="text"/></div>
+<div class="f"><label for="q-role">Your role *</label><select id="q-role" name="role" required=""><option value="">Choose…</option><option value="Owner or founder">Owner or founder</option><option value="Management">Management</option><option value="Intermediary with a written mandate from the owner">Intermediary with a written mandate from the owner</option><option value="Intermediary without a mandate">Intermediary without a mandate</option><option value="Investor">Investor</option></select></div>
+<h3 class="qsec">2. The project</h3>
+<div class="f full"><label for="q-request_type">Type of request *</label><select id="q-request_type" name="request_type" required=""><option value="">Choose…</option><option value="Standard task: company registration, bank account, residence permit, Virtual Zone">Standard task: company registration, bank account, residence permit, Virtual Zone</option><option value="Project or transaction: financing, investment, M&amp;A, real estate">Project or transaction: financing, investment, M&A, real estate</option><option value="Not sure">Not sure</option></select></div>
+<div class="f full"><label for="q-project">Describe the project in 3–4 sentences *</label><textarea id="q-project" name="project" required=""></textarea></div>
+<div class="f"><label for="q-project_country">Country of the project *</label><select id="q-project_country" name="project_country" required=""><option value="">Choose…</option><option value="Georgia">Georgia</option><option value="Armenia">Armenia</option><option value="Azerbaijan">Azerbaijan</option><option value="Kazakhstan">Kazakhstan</option><option value="Other">Other</option></select></div>
+<div class="f"><label for="q-sector">Sector</label><input id="q-sector" name="sector" type="text"/></div>
+<div class="f"><label for="q-stage">Stage *</label><select id="q-stage" name="stage" required=""><option value="">Choose…</option><option value="Idea">Idea</option><option value="Land, licences or permits secured">Land, licences or permits secured</option><option value="Under construction or launch">Under construction or launch</option><option value="Operating business with revenue">Operating business with revenue</option></select></div>
+<h3 class="qsec">3. Amount and use of funds</h3>
+<div class="f"><label for="q-amount">Amount needed (USD) *</label><select id="q-amount" name="amount" required=""><option value="">Choose…</option><option value="Under 500k">Under 500k</option><option value="500k–2m">500k–2m</option><option value="2–10m">2–10m</option><option value="10–50m">10–50m</option><option value="Over 50m">Over 50m</option></select></div>
+<div class="f full"><label for="q-use_of_funds">What will the money be used for?</label><textarea id="q-use_of_funds" name="use_of_funds"></textarea></div>
+<h3 class="qsec">4. Structure</h3>
+<div class="f"><label for="q-structure">Type of financing</label><select id="q-structure" name="structure"><option value="">Choose…</option><option value="Debt">Debt</option><option value="Equity">Equity</option><option value="Debt and equity">Debt and equity</option><option value="Open to proposals">Open to proposals</option></select></div>
+<div class="f full"><label for="q-terms">What share, interest rate or return do you offer the investor?</label><textarea id="q-terms" name="terms"></textarea></div>
+<h3 class="qsec">5. Your own contribution</h3>
+<div class="f full"><label for="q-own_contribution">How much money or assets have you invested or will you invest yourself?</label><textarea id="q-own_contribution" name="own_contribution"></textarea></div>
+<h3 class="qsec">6. Numbers</h3>
+<div class="f full"><label for="q-financials">For an operating business: revenue, EBITDA and debt for the last two years</label><textarea id="q-financials" name="financials"></textarea></div>
+<div class="f"><label for="q-business_plan">Do you have a business plan and financial model?</label><select id="q-business_plan" name="business_plan"><option value="">Choose…</option><option value="Both">Both</option><option value="Business plan only">Business plan only</option><option value="Not yet">Not yet</option></select></div>
+<h3 class="qsec">7. Assets and collateral</h3>
+<div class="f full"><label for="q-assets">Land, property, equipment, contracts or offtake agreements. Who owns them, and are there any charges or encumbrances?</label><textarea id="q-assets" name="assets"></textarea></div>
+<h3 class="qsec">8. Team</h3>
+<div class="f full"><label for="q-team">Who will manage the project, and what relevant experience and track record do they have?</label><textarea id="q-team" name="team"></textarea></div>
+<h3 class="qsec">9. Timing and exit</h3>
+<div class="f full"><label for="q-timing">When do you need the funds, what are the key milestones, and how and when does the investor get their money back?</label><textarea id="q-timing" name="timing"></textarea></div>
+<h3 class="qsec">10. Process</h3>
+<div class="f full"><label for="q-process">Are you prepared to sign an NDA, pass KYC/AML checks and work on a retainer plus success fee basis?</label><select id="q-process" name="process"><option value="">Choose…</option><option value="Yes">Yes</option><option value="Yes, but I would like to discuss the fees">Yes, but I would like to discuss the fees</option><option value="No">No</option></select></div>
+<div class="f full"><label for="q-shown">Has the project been presented to other investors or advisers? If so, to whom and with what result?</label><textarea id="q-shown" name="shown"></textarea></div>
+<div class="f full"><label for="q-link">Link to presentation, business plan or model (Google Drive, Dropbox, etc.)</label><input id="q-link" name="link" type="url"/></div>
+<label class="consent"><input id="q-consent" required="" type="checkbox"/><span>I agree that K+A Consulting may use these details to assess my project, as described in the <a class="privacy-open" href="#privacy">privacy policy</a>.</span></label>
+<div><button class="btn primary" type="submit">Send questionnaire</button></div>
+<p aria-live="polite" class="fstatus" id="q-status" role="status"></p>
 </form>
 </div>
-</div>
 </section>
+<style>#questionnaire{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:900px}#questionnaire .full,#questionnaire .qsec,#questionnaire .consent,#questionnaire>div:last-of-type,#questionnaire .fstatus{grid-column:1/-1}#questionnaire .qsec{margin:18px 0 0;font-size:1.25rem}@media(max-width:700px){#questionnaire{grid-template-columns:1fr}}</style>
 <footer>
 <div class="wrap">
 <div class="fl">
@@ -197,82 +198,28 @@
 
 <script>
 (function(){
-  /* Paste your Formspree endpoint here, e.g. "https://formspree.io/f/abcdwxyz". Empty = the form opens the visitor's email app instead. */
-  var FORM_ENDPOINT = "";
-
-  var KA={};
-  var MSG={
-    ru:{"need": "Пожалуйста, укажите имя, эл. почту и сообщение и отметьте согласие.", "sent": "Спасибо. Мы получили ваш запрос и ответим по электронной почте.", "mail": "Должно открыться ваше почтовое приложение с готовым письмом. Если нет, напишите на at@kaconsulting.ge.", "err": "Не удалось отправить запрос. Пожалуйста, напишите на at@kaconsulting.ge."},
-    en:{need:"Please fill in your name, email and message, and tick the consent box.",sent:"Thank you. We have received your enquiry and will reply by email.",mail:"Your email app should open with the message ready to send. If it doesn't, write to at@kaconsulting.ge.",err:"The enquiry could not be sent. Please write to at@kaconsulting.ge."},
-    ka:{need:"გთხოვთ, შეავსოთ სახელი, ელ-ფოსტა და შეტყობინება და მონიშნოთ თანხმობის ველი.",sent:"გმადლობთ. თქვენი მოთხოვნა მიღებულია, პასუხს ელ-ფოსტით მიიღებთ.",mail:"უნდა გაიხსნას თქვენი ელ-ფოსტის აპლიკაცია მზა წერილით. თუ არ გაიხსნა, მოგვწერეთ: at@kaconsulting.ge",err:"მოთხოვნა ვერ გაიგზავნა. გთხოვთ, მოგვწეროთ: at@kaconsulting.ge"}
-  };
-  var lang="en";
-  var nodes=document.querySelectorAll("[data-i]"),EN={};
-  nodes.forEach(function(n){var k=n.getAttribute("data-i");if(!(k in EN))EN[k]=n.textContent;});
-  function set(l){
-    lang=l;var d=l==="ka"?KA:EN;
-    nodes.forEach(function(n){var k=n.getAttribute("data-i");if(d[k])n.textContent=d[k];});
-    document.documentElement.lang=l;
-    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l));});
-    try{localStorage.setItem("ka-lang",l);}catch(e){}
-  }
-  var STATIC=true;
-  if(STATIC){var hl=document.documentElement.lang;lang=(hl==="ka"||hl==="ru")?hl:"en";}
-  else{
-    document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang);});});
-    var saved="en";try{saved=localStorage.getItem("ka-lang")||"en";}catch(e){}
-    if(saved==="ka")set("ka");else document.documentElement.lang="en";
-  }
-
-  /* Audience buttons preselect the form */
-  var role=document.getElementById("f-role");
-  document.querySelectorAll("[data-role]").forEach(function(a){a.addEventListener("click",function(){role.value=a.dataset.role==="investor"?"Investor":"Company";});});
-
-  /* Privacy policy panel */
   var pp=document.getElementById("privacy");
   function openPP(e){if(e)e.preventDefault();pp.hidden=false;pp.scrollIntoView({behavior:"smooth"});}
   document.querySelectorAll(".privacy-open").forEach(function(b){b.addEventListener("click",openPP);});
-  document.getElementById("privacy-close").addEventListener("click",function(){pp.hidden=true;document.getElementById("contact").scrollIntoView();});
+  var pc=document.getElementById("privacy-close");if(pc)pc.addEventListener("click",function(){pp.hidden=true;document.getElementById("contact").scrollIntoView();});
   if(location.hash==="#privacy")openPP();
-
-  /* Article panel (single-page preview only; the static site uses real pages) */
-  var art=null;
-  if(art){
-    document.querySelectorAll("[data-article]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();art.hidden=false;art.scrollIntoView({behavior:"smooth"});});});
-    document.getElementById("article-close").addEventListener("click",function(){art.hidden=true;document.getElementById("insights").scrollIntoView();});
-    document.querySelectorAll("[data-close-article]").forEach(function(a){a.addEventListener("click",function(){art.hidden=true;});});
-    if(location.hash==="#mc-article"){art.hidden=false;art.scrollIntoView();}
-  }
-
-  /* Enquiry form */
-  var form=document.getElementById("enquiry"),status=document.getElementById("f-status");
+  var REQ=["request_type","name","email","role","project","project_country","stage","amount"],ALL=[["request_type","Type of request"],["name","Your name"],["email","Email"],["phone","Phone, WhatsApp or Telegram"],["company","Company and website"],["country","Country of registration"],["role","Your role"],["project","Describe the project in 3–4 sentences"],["project_country","Country of the project"],["sector","Sector"],["stage","Stage"],["amount","Amount needed (USD)"],["use_of_funds","What will the money be used for?"],["structure","Type of financing"],["terms","What share, interest rate or return do you offer the investor?"],["own_contribution","How much money or assets have you invested or will you invest yourself?"],["financials","For an operating business: revenue, EBITDA and debt for the last two years"],["business_plan","Do you have a business plan and financial model?"],["assets","Land, property, equipment, contracts or offtake agreements. Who owns them, and are there any charges or encumbrances?"],["team","Who will manage the project, and what relevant experience and track record do they have?"],["timing","When do you need the funds, what are the key milestones, and how and when does the investor get their money back?"],["process","Are you prepared to sign an NDA, pass KYC/AML checks and work on a retainer plus success fee basis?"],["shown","Has the project been presented to other investors or advisers? If so, to whom and with what result?"],["link","Link to presentation, business plan or model (Google Drive, Dropbox, etc.)"]];
+  var M={"need":"Please fill in the fields marked * and tick the consent box.","sent":"Thank you. We have received your questionnaire and will reply within three business days.","mail":"Your email app should open with the answers ready to send. If it doesn't, write to at@kaconsulting.ge.","subj":"Project questionnaire: "};
+  var form=document.getElementById("questionnaire"),status=document.getElementById("q-status");
+  function v(id){return document.getElementById("q-"+id).value.trim();}
   form.addEventListener("submit",function(e){
     e.preventDefault();
-    var m=MSG[lang];
-    function v(id){return document.getElementById(id).value.trim();}
-    var name=v("f-name"),email=v("f-email"),msg=v("f-msg");
-    if(!name||!email||email.indexOf("@")<1||!msg||!document.getElementById("f-consent").checked){status.textContent=m.need;return;}
+    var ok=REQ.every(function(id){return v(id);})&&v("email").indexOf("@")>0&&document.getElementById("q-consent").checked;
+    if(!ok){status.textContent=M.need;return;}
     var fd=new FormData(form);
     function mailto(){
-      var body="Name: "+name+"\nEmail: "+email+"\nPhone: "+v("f-phone")+"\nRole: "+v("f-role")+"\nMarket: "+v("f-market")+"\nSize (USD): "+v("f-size")+"\n\n"+msg;
-      status.textContent=m.mail;
-      location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent("Website enquiry: "+name)+"&body="+encodeURIComponent(body);
+      var body=ALL.map(function(a){return a[1]+": "+v(a[0]);}).join("\n\n");
+      status.textContent=M.mail;
+      location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent(M.subj+v("name"))+"&body="+encodeURIComponent(body);
     }
-    if(STATIC && !FORM_ENDPOINT){
-      fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(fd).toString()})
-        .then(function(r){if(!r.ok)throw 0;form.reset();status.textContent=m.sent;})
-        .catch(mailto);
-      return;
-    }
-    if(FORM_ENDPOINT){
-      fetch(FORM_ENDPOINT,{method:"POST",body:fd,headers:{Accept:"application/json"}})
-        .then(function(r){if(!r.ok)throw 0;form.reset();status.textContent=m.sent;})
-        .catch(function(){status.textContent=m.err;});
-    }else{
-      var body="Name: "+name+"\nEmail: "+email+"\nPhone: "+v("f-phone")+"\nRole: "+v("f-role")+"\nMarket: "+v("f-market")+"\nSize (USD): "+v("f-size")+"\n\n"+msg;
-      status.textContent=m.mail;
-      location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent("Website enquiry: "+name)+"&body="+encodeURIComponent(body);
-    }
+    fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(fd).toString()})
+      .then(function(r){if(!r.ok)throw 0;form.reset();status.textContent=M.sent;})
+      .catch(mailto);
   });
 })();
 </script>
