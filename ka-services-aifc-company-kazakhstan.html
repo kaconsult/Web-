@@ -100,53 +100,54 @@
 <section class="contact" id="contact">
 <div class="wrap">
 <div class="head">
-<div><p class="eyebrow" data-i="c_eyebrow">კონტაქტი</p><h2 data-i="c_h2">დავიწყოთ საუბრით</h2></div>
-<p data-i="c_p">მოგვიყევით, რას გეგმავთ და სად. ყველა მოთხოვნა კონფიდენციალურად განიხილება.</p>
+<div><p class="eyebrow">პროექტის კითხვარი</p><h2>ათი კითხვა თქვენი პროექტის შესახებ</h2></div>
+<p>* ნიშნით მონიშნული ველები სავალდებულოა.</p>
 </div>
-<div class="cwrap">
-<div class="cdet">
-<div><div class="k" data-i="c_email">ელ-ფოსტა</div><div class="v"><a href="mailto:at@kaconsulting.ge">at@kaconsulting.ge</a></div></div>
-<div><div class="k" data-i="c_phone">ტელეფონი, WhatsApp, Telegram</div><div class="v"><a href="tel:+995598896040">+995 598 896 040</a></div>
-<div class="msg"><a href="https://wa.me/995598896040" rel="noopener" target="_blank">WhatsApp</a><a href="https://t.me/+995598896040" rel="noopener" target="_blank">Telegram</a><a href="https://www.linkedin.com/company/kaconsulting" rel="noopener" target="_blank">LinkedIn</a></div></div>
-<div><div class="k" data-i="c_office">ოფისი</div><div class="v" data-i="c_city">თბილისი, საქართველო</div></div>
-</div>
-<form data-netlify="true" id="enquiry" method="POST" name="enquiry" netlify-honeypot="bot-field" novalidate="">
-<input name="form-name" type="hidden" value="enquiry"/>
+<form data-netlify="true" id="questionnaire" method="POST" name="questionnaire" netlify-honeypot="bot-field" novalidate="">
+<input name="form-name" type="hidden" value="questionnaire"/>
+<input name="language" type="hidden" value="ka"/>
 <p hidden=""><label>Leave this empty <input name="bot-field"/></label></p>
-<div class="f"><label data-i="f_name" for="f-name">სახელი</label><input autocomplete="name" id="f-name" name="name" required=""/></div>
-<div class="f"><label data-i="f_email" for="f-email">ელ-ფოსტა</label><input autocomplete="email" id="f-email" name="email" required="" type="email"/></div>
-<div class="f"><label data-i="f_phone" for="f-phone">ტელეფონი ან WhatsApp (არასავალდებულო)</label><input autocomplete="tel" id="f-phone" name="phone" type="tel"/></div>
-<div class="f"><label data-i="f_role" for="f-role">მე ვარ</label>
-<select id="f-role" name="role">
-<option data-i="o_inv" value="Investor">ინვესტორი</option>
-<option data-i="o_co" value="Company">კომპანია</option>
-<option data-i="o_pc" value="Private client">კერძო კლიენტი ან ოჯახი</option>
-<option data-i="o_ot" value="Other">სხვა</option>
-</select></div>
-<div class="f"><label data-i="f_market" for="f-market">ბაზარი</label>
-<select id="f-market" name="market">
-<option data-i="m_ge" value="Georgia">საქართველო</option>
-<option data-i="m_am" value="Armenia">სომხეთი</option>
-<option data-i="m_az" value="Azerbaijan">აზერბაიჯანი</option>
-<option data-i="m_kz" value="Kazakhstan">ყაზახეთი</option>
-<option data-i="o_sev" value="Several">რამდენიმე</option>
-</select></div>
-<div class="f"><label data-i="f_size" for="f-size">სავარაუდო მოცულობა (USD)</label>
-<select id="f-size" name="size">
-<option data-i="z1" value="Under 1m">1 მლნ-მდე</option>
-<option data-i="z2" value="1-5m">1–5 მლნ</option>
-<option data-i="z3" value="5-20m">5–20 მლნ</option>
-<option data-i="z4" value="Over 20m">20 მლნ-ზე მეტი</option>
-<option data-i="z5" value="n/a">არ ეხება</option>
-</select></div>
-<div class="f full"><label data-i="f_msg" for="f-msg">რას გეგმავთ?</label><textarea id="f-msg" name="message" required=""></textarea></div>
-<label class="consent"><input id="f-consent" required="" type="checkbox"/><span><span data-i="f_consent">ვეთანხმები, რომ K+A Consulting გამოიყენებს ამ მონაცემებს ჩემს მოთხოვნაზე საპასუხოდ, როგორც ეს აღწერილია</span> <a class="privacy-open" data-i="f_pp" href="#privacy">კონფიდენციალურობის პოლიტიკაში</a>.</span></label>
-<div><button class="btn primary" data-i="f_submit" type="submit">მოთხოვნის გაგზავნა</button></div>
-<p aria-live="polite" class="fstatus" id="f-status" role="status"></p>
+<h3 class="qsec">1. თქვენ შესახებ</h3>
+<div class="f"><label for="q-name">თქვენი სახელი *</label><input id="q-name" name="name" type="text" autocomplete="name" required=""/></div>
+<div class="f"><label for="q-email">ელ-ფოსტა *</label><input id="q-email" name="email" type="email" autocomplete="email" required=""/></div>
+<div class="f"><label for="q-phone">ტელეფონი, WhatsApp ან Telegram</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"/></div>
+<div class="f"><label for="q-company">კომპანია და ვებსაიტი</label><input id="q-company" name="company" type="text"/></div>
+<div class="f"><label for="q-country">რეგისტრაციის ქვეყანა</label><input id="q-country" name="country" type="text"/></div>
+<div class="f"><label for="q-role">თქვენი როლი *</label><select id="q-role" name="role" required=""><option value="">აირჩიეთ…</option><option value="მფლობელი ან დამფუძნებელი">მფლობელი ან დამფუძნებელი</option><option value="მენეჯმენტი">მენეჯმენტი</option><option value="შუამავალი მფლობელის წერილობითი მანდატით">შუამავალი მფლობელის წერილობითი მანდატით</option><option value="შუამავალი მანდატის გარეშე">შუამავალი მანდატის გარეშე</option><option value="ინვესტორი">ინვესტორი</option></select></div>
+<h3 class="qsec">2. პროექტი</h3>
+<div class="f full"><label for="q-request_type">მოთხოვნის ტიპი *</label><select id="q-request_type" name="request_type" required=""><option value="">აირჩიეთ…</option><option value="სტანდარტული საკითხი: კომპანიის რეგისტრაცია, საბანკო ანგარიში, ბინადრობის ნებართვა, ვირტუალური ზონა">სტანდარტული საკითხი: კომპანიის რეგისტრაცია, საბანკო ანგარიში, ბინადრობის ნებართვა, ვირტუალური ზონა</option><option value="პროექტი ან გარიგება: დაფინანსება, ინვესტიცია, M&amp;A, უძრავი ქონება">პროექტი ან გარიგება: დაფინანსება, ინვესტიცია, M&A, უძრავი ქონება</option><option value="არ ვარ დარწმუნებული">არ ვარ დარწმუნებული</option></select></div>
+<div class="f full"><label for="q-project">აღწერეთ პროექტი 3–4 წინადადებით *</label><textarea id="q-project" name="project" required=""></textarea></div>
+<div class="f"><label for="q-project_country">პროექტის ქვეყანა *</label><select id="q-project_country" name="project_country" required=""><option value="">აირჩიეთ…</option><option value="საქართველო">საქართველო</option><option value="სომხეთი">სომხეთი</option><option value="აზერბაიჯანი">აზერბაიჯანი</option><option value="ყაზახეთი">ყაზახეთი</option><option value="სხვა">სხვა</option></select></div>
+<div class="f"><label for="q-sector">დარგი</label><input id="q-sector" name="sector" type="text"/></div>
+<div class="f"><label for="q-stage">ეტაპი *</label><select id="q-stage" name="stage" required=""><option value="">აირჩიეთ…</option><option value="იდეა">იდეა</option><option value="არსებობს მიწა, ლიცენზიები ან ნებართვები">არსებობს მიწა, ლიცენზიები ან ნებართვები</option><option value="მშენებლობა ან გაშვება">მშენებლობა ან გაშვება</option><option value="მოქმედი ბიზნესი შემოსავლით">მოქმედი ბიზნესი შემოსავლით</option></select></div>
+<h3 class="qsec">3. თანხა და სახსრების გამოყენება</h3>
+<div class="f"><label for="q-amount">საჭირო თანხა (USD) *</label><select id="q-amount" name="amount" required=""><option value="">აირჩიეთ…</option><option value="500 ათასამდე">500 ათასამდე</option><option value="500 ათასი – 2 მლნ">500 ათასი – 2 მლნ</option><option value="2–10 მლნ">2–10 მლნ</option><option value="10–50 მლნ">10–50 მლნ</option><option value="50 მლნ-ზე მეტი">50 მლნ-ზე მეტი</option></select></div>
+<div class="f full"><label for="q-use_of_funds">რას მოხმარდება სახსრები?</label><textarea id="q-use_of_funds" name="use_of_funds"></textarea></div>
+<h3 class="qsec">4. სტრუქტურა</h3>
+<div class="f"><label for="q-structure">დაფინანსების ტიპი</label><select id="q-structure" name="structure"><option value="">აირჩიეთ…</option><option value="სესხი">სესხი</option><option value="წილი კაპიტალში">წილი კაპიტალში</option><option value="სესხი და კაპიტალი">სესხი და კაპიტალი</option><option value="ღია ვართ შეთავაზებებისთვის">ღია ვართ შეთავაზებებისთვის</option></select></div>
+<div class="f full"><label for="q-terms">რა წილს, საპროცენტო განაკვეთს ან შემოსავლიანობას სთავაზობთ ინვესტორს?</label><textarea id="q-terms" name="terms"></textarea></div>
+<h3 class="qsec">5. თქვენი საკუთარი შენატანი</h3>
+<div class="f full"><label for="q-own_contribution">რამდენი თანხა ან აქტივი უკვე ჩადეთ ან ხართ მზად, ჩადოთ თავად?</label><textarea id="q-own_contribution" name="own_contribution"></textarea></div>
+<h3 class="qsec">6. ციფრები</h3>
+<div class="f full"><label for="q-financials">მოქმედი ბიზნესისთვის: შემოსავალი, EBITDA და ვალი ბოლო ორი წლის მონაცემებით</label><textarea id="q-financials" name="financials"></textarea></div>
+<div class="f"><label for="q-business_plan">გაქვთ ბიზნეს-გეგმა და ფინანსური მოდელი?</label><select id="q-business_plan" name="business_plan"><option value="">აირჩიეთ…</option><option value="ორივე">ორივე</option><option value="მხოლოდ ბიზნეს-გეგმა">მხოლოდ ბიზნეს-გეგმა</option><option value="ჯერ არა">ჯერ არა</option></select></div>
+<h3 class="qsec">7. აქტივები და უზრუნველყოფა</h3>
+<div class="f full"><label for="q-assets">მიწა, უძრავი ქონება, აღჭურვილობა, კონტრაქტები ან ოფთეიქის შეთანხმებები. ვინ არის მესაკუთრე და არის თუ არა ქონება დატვირთული იპოთეკით ან სხვა ვალდებულებით?</label><textarea id="q-assets" name="assets"></textarea></div>
+<h3 class="qsec">8. გუნდი</h3>
+<div class="f full"><label for="q-team">ვინ უხელმძღვანელებს პროექტს და რა შესაბამისი გამოცდილება და შედეგები აქვს?</label><textarea id="q-team" name="team"></textarea></div>
+<h3 class="qsec">9. ვადები და გასვლა</h3>
+<div class="f full"><label for="q-timing">როდის გჭირდებათ სახსრები, რა არის ძირითადი ეტაპები და როგორ და როდის დაიბრუნებს ინვესტორი ჩადებულ თანხას?</label><textarea id="q-timing" name="timing"></textarea></div>
+<h3 class="qsec">10. პროცესი</h3>
+<div class="f full"><label for="q-process">მზად ხართ, მოაწეროთ ხელი NDA-ს, გაიაროთ KYC/AML შემოწმება და ითანამშრომლოთ ფიქსირებული ანაზღაურებისა (retainer) და წარმატების საკომისიოს საფუძველზე?</label><select id="q-process" name="process"><option value="">აირჩიეთ…</option><option value="დიახ">დიახ</option><option value="დიახ, მაგრამ მსურს ანაზღაურების განხილვა">დიახ, მაგრამ მსურს ანაზღაურების განხილვა</option><option value="არა">არა</option></select></div>
+<div class="f full"><label for="q-shown">წარუდგინეთ თუ არა პროექტი სხვა ინვესტორებს ან კონსულტანტებს? თუ კი, ვის და რა შედეგით?</label><textarea id="q-shown" name="shown"></textarea></div>
+<div class="f full"><label for="q-link">ბმული პრეზენტაციაზე, ბიზნეს-გეგმაზე ან მოდელზე (Google Drive, Dropbox და ა.შ.)</label><input id="q-link" name="link" type="url"/></div>
+<label class="consent"><input id="q-consent" required="" type="checkbox"/><span>ვეთანხმები, რომ K+A Consulting-მა გამოიყენოს ეს მონაცემები ჩემი პროექტის შესაფასებლად, როგორც ეს აღწერილია <a class="privacy-open" href="#privacy">კონფიდენციალურობის პოლიტიკაში</a>.</span></label>
+<div><button class="btn primary" type="submit">კითხვარის გაგზავნა</button></div>
+<p aria-live="polite" class="fstatus" id="q-status" role="status"></p>
 </form>
 </div>
-</div>
 </section>
+<style>#questionnaire{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:900px}#questionnaire .full,#questionnaire .qsec,#questionnaire .consent,#questionnaire>div:last-of-type,#questionnaire .fstatus{grid-column:1/-1}#questionnaire .qsec{margin:18px 0 0;font-size:1.25rem}@media(max-width:700px){#questionnaire{grid-template-columns:1fr}}</style>
 <footer>
 <div class="wrap">
 <div class="fl">
@@ -178,82 +179,28 @@
 
 <script>
 (function(){
-  /* Paste your Formspree endpoint here, e.g. "https://formspree.io/f/abcdwxyz". Empty = the form opens the visitor's email app instead. */
-  var FORM_ENDPOINT = "";
-
-  var KA={};
-  var MSG={
-    ru:{"need": "Пожалуйста, укажите имя, эл. почту и сообщение и отметьте согласие.", "sent": "Спасибо. Мы получили ваш запрос и ответим по электронной почте.", "mail": "Должно открыться ваше почтовое приложение с готовым письмом. Если нет, напишите на at@kaconsulting.ge.", "err": "Не удалось отправить запрос. Пожалуйста, напишите на at@kaconsulting.ge."},
-    en:{need:"Please fill in your name, email and message, and tick the consent box.",sent:"Thank you. We have received your enquiry and will reply by email.",mail:"Your email app should open with the message ready to send. If it doesn't, write to at@kaconsulting.ge.",err:"The enquiry could not be sent. Please write to at@kaconsulting.ge."},
-    ka:{need:"გთხოვთ, შეავსოთ სახელი, ელ-ფოსტა და შეტყობინება და მონიშნოთ თანხმობის ველი.",sent:"გმადლობთ. თქვენი მოთხოვნა მიღებულია, პასუხს ელ-ფოსტით მიიღებთ.",mail:"უნდა გაიხსნას თქვენი ელ-ფოსტის აპლიკაცია მზა წერილით. თუ არ გაიხსნა, მოგვწერეთ: at@kaconsulting.ge",err:"მოთხოვნა ვერ გაიგზავნა. გთხოვთ, მოგვწეროთ: at@kaconsulting.ge"}
-  };
-  var lang="en";
-  var nodes=document.querySelectorAll("[data-i]"),EN={};
-  nodes.forEach(function(n){var k=n.getAttribute("data-i");if(!(k in EN))EN[k]=n.textContent;});
-  function set(l){
-    lang=l;var d=l==="ka"?KA:EN;
-    nodes.forEach(function(n){var k=n.getAttribute("data-i");if(d[k])n.textContent=d[k];});
-    document.documentElement.lang=l;
-    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l));});
-    try{localStorage.setItem("ka-lang",l);}catch(e){}
-  }
-  var STATIC=true;
-  if(STATIC){var hl=document.documentElement.lang;lang=(hl==="ka"||hl==="ru")?hl:"en";}
-  else{
-    document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang);});});
-    var saved="en";try{saved=localStorage.getItem("ka-lang")||"en";}catch(e){}
-    if(saved==="ka")set("ka");else document.documentElement.lang="en";
-  }
-
-  /* Audience buttons preselect the form */
-  var role=document.getElementById("f-role");
-  document.querySelectorAll("[data-role]").forEach(function(a){a.addEventListener("click",function(){role.value=a.dataset.role==="investor"?"Investor":"Company";});});
-
-  /* Privacy policy panel */
   var pp=document.getElementById("privacy");
   function openPP(e){if(e)e.preventDefault();pp.hidden=false;pp.scrollIntoView({behavior:"smooth"});}
   document.querySelectorAll(".privacy-open").forEach(function(b){b.addEventListener("click",openPP);});
-  document.getElementById("privacy-close").addEventListener("click",function(){pp.hidden=true;document.getElementById("contact").scrollIntoView();});
+  var pc=document.getElementById("privacy-close");if(pc)pc.addEventListener("click",function(){pp.hidden=true;document.getElementById("contact").scrollIntoView();});
   if(location.hash==="#privacy")openPP();
-
-  /* Article panel (single-page preview only; the static site uses real pages) */
-  var art=null;
-  if(art){
-    document.querySelectorAll("[data-article]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();art.hidden=false;art.scrollIntoView({behavior:"smooth"});});});
-    document.getElementById("article-close").addEventListener("click",function(){art.hidden=true;document.getElementById("insights").scrollIntoView();});
-    document.querySelectorAll("[data-close-article]").forEach(function(a){a.addEventListener("click",function(){art.hidden=true;});});
-    if(location.hash==="#mc-article"){art.hidden=false;art.scrollIntoView();}
-  }
-
-  /* Enquiry form */
-  var form=document.getElementById("enquiry"),status=document.getElementById("f-status");
+  var REQ=["request_type","name","email","role","project","project_country","stage","amount"],ALL=[["request_type","მოთხოვნის ტიპი"],["name","თქვენი სახელი"],["email","ელ-ფოსტა"],["phone","ტელეფონი, WhatsApp ან Telegram"],["company","კომპანია და ვებსაიტი"],["country","რეგისტრაციის ქვეყანა"],["role","თქვენი როლი"],["project","აღწერეთ პროექტი 3–4 წინადადებით"],["project_country","პროექტის ქვეყანა"],["sector","დარგი"],["stage","ეტაპი"],["amount","საჭირო თანხა (USD)"],["use_of_funds","რას მოხმარდება სახსრები?"],["structure","დაფინანსების ტიპი"],["terms","რა წილს, საპროცენტო განაკვეთს ან შემოსავლიანობას სთავაზობთ ინვესტორს?"],["own_contribution","რამდენი თანხა ან აქტივი უკვე ჩადეთ ან ხართ მზად, ჩადოთ თავად?"],["financials","მოქმედი ბიზნესისთვის: შემოსავალი, EBITDA და ვალი ბოლო ორი წლის მონაცემებით"],["business_plan","გაქვთ ბიზნეს-გეგმა და ფინანსური მოდელი?"],["assets","მიწა, უძრავი ქონება, აღჭურვილობა, კონტრაქტები ან ოფთეიქის შეთანხმებები. ვინ არის მესაკუთრე და არის თუ არა ქონება დატვირთული იპოთეკით ან სხვა ვალდებულებით?"],["team","ვინ უხელმძღვანელებს პროექტს და რა შესაბამისი გამოცდილება და შედეგები აქვს?"],["timing","როდის გჭირდებათ სახსრები, რა არის ძირითადი ეტაპები და როგორ და როდის დაიბრუნებს ინვესტორი ჩადებულ თანხას?"],["process","მზად ხართ, მოაწეროთ ხელი NDA-ს, გაიაროთ KYC/AML შემოწმება და ითანამშრომლოთ ფიქსირებული ანაზღაურებისა (retainer) და წარმატების საკომისიოს საფუძველზე?"],["shown","წარუდგინეთ თუ არა პროექტი სხვა ინვესტორებს ან კონსულტანტებს? თუ კი, ვის და რა შედეგით?"],["link","ბმული პრეზენტაციაზე, ბიზნეს-გეგმაზე ან მოდელზე (Google Drive, Dropbox და ა.შ.)"]];
+  var M={"need":"გთხოვთ, შეავსოთ * ნიშნით მონიშნული ველები და მონიშნოთ თანხმობის ველი.","sent":"გმადლობთ. თქვენი კითხვარი მიღებულია, გიპასუხებთ სამი სამუშაო დღის განმავლობაში.","mail":"უნდა გაიხსნას თქვენი ელ-ფოსტის აპლიკაცია მზა წერილით. თუ არ გაიხსნა, მოგვწერეთ: at@kaconsulting.ge","subj":"პროექტის კითხვარი: "};
+  var form=document.getElementById("questionnaire"),status=document.getElementById("q-status");
+  function v(id){return document.getElementById("q-"+id).value.trim();}
   form.addEventListener("submit",function(e){
     e.preventDefault();
-    var m=MSG[lang];
-    function v(id){return document.getElementById(id).value.trim();}
-    var name=v("f-name"),email=v("f-email"),msg=v("f-msg");
-    if(!name||!email||email.indexOf("@")<1||!msg||!document.getElementById("f-consent").checked){status.textContent=m.need;return;}
+    var ok=REQ.every(function(id){return v(id);})&&v("email").indexOf("@")>0&&document.getElementById("q-consent").checked;
+    if(!ok){status.textContent=M.need;return;}
     var fd=new FormData(form);
     function mailto(){
-      var body="Name: "+name+"\nEmail: "+email+"\nPhone: "+v("f-phone")+"\nRole: "+v("f-role")+"\nMarket: "+v("f-market")+"\nSize (USD): "+v("f-size")+"\n\n"+msg;
-      status.textContent=m.mail;
-      location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent("Website enquiry: "+name)+"&body="+encodeURIComponent(body);
+      var body=ALL.map(function(a){return a[1]+": "+v(a[0]);}).join("\n\n");
+      status.textContent=M.mail;
+      location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent(M.subj+v("name"))+"&body="+encodeURIComponent(body);
     }
-    if(STATIC && !FORM_ENDPOINT){
-      fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(fd).toString()})
-        .then(function(r){if(!r.ok)throw 0;form.reset();status.textContent=m.sent;})
-        .catch(mailto);
-      return;
-    }
-    if(FORM_ENDPOINT){
-      fetch(FORM_ENDPOINT,{method:"POST",body:fd,headers:{Accept:"application/json"}})
-        .then(function(r){if(!r.ok)throw 0;form.reset();status.textContent=m.sent;})
-        .catch(function(){status.textContent=m.err;});
-    }else{
-      var body="Name: "+name+"\nEmail: "+email+"\nPhone: "+v("f-phone")+"\nRole: "+v("f-role")+"\nMarket: "+v("f-market")+"\nSize (USD): "+v("f-size")+"\n\n"+msg;
-      status.textContent=m.mail;
-      location.href="mailto:at@kaconsulting.ge?subject="+encodeURIComponent("Website enquiry: "+name)+"&body="+encodeURIComponent(body);
-    }
+    fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(fd).toString()})
+      .then(function(r){if(!r.ok)throw 0;form.reset();status.textContent=M.sent;})
+      .catch(mailto);
   });
 })();
 </script>
